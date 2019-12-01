@@ -12,7 +12,6 @@ const { override, addLessLoader, fixBabelImports, addDecoratorsLegacy } = requir
 /* 自定义主题 */
 const modifyVars = require('./lessVars')
 
-console.log(modifyVars)
 
 module.exports = override(
 	addLessLoader({

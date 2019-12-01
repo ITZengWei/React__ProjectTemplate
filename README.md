@@ -116,7 +116,50 @@ export default App
 ```
 
 
+## 路由 
 
++ 安装 react-router-dom
+
+```cmd
+  cnpm i react-router-dom -S
+```
+
+### 基本页面解构 
+
+```tree
+  -Login
+  -404
+  -admin
+    -dashboard
+    -article
+      -list
+      -edit
+    -settings  
+```
+
+
+#### 坑
+
+```JavaScript
+<Switch>
+  {
+    adminRouter.map(route => {
+      return (
+        <Route
+          key={ route.path }
+          path={ route.path }
+          exact={ route.exact }
+          render={
+            (routerProps) => {
+              return <route.component { ...routerProps }/>
+            }
+          }
+        />
+      )
+    })
+  }
+</Switch>
+```
 
 
 
