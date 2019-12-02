@@ -137,6 +137,55 @@ export default App
     -settings  
 ```
 
+### 内部 Router
+
+```JavaScript
+<Switch>
+  {
+    adminRouter.map(route => {
+      console.log(adminRouter[0])
+      return (
+        <Route
+          key={ route.path }
+          path={ route.path }
+          exact={ route.exact }
+          render={
+            (routerProps) => {
+              return <route.component { ...routerProps }/>
+            }
+          }
+        />
+      )
+    })
+  }`
+  <Redirect to={ adminRouter[0].path } from="/admin" exact  />
+  <Redirect to="/404" />
+</Switch>
+```
+
+
+
+### 路由的懒加载 `react-loadable`
+
++ 引入 `react-loadable` 第三方包
++ 引入 Loading 组件
++ 使用
+
+```JavaScript
+  
+  import Loading from '../components/index'
+  const Dashboard = Loadable({
+    loader: () => import('./Dashboard'),
+    loading: Loading,
+  })
+
+```
+
+#### 自定义 `loadable`
+
+> import 本身就是 一个 promise
+
+
 
 #### 坑
 

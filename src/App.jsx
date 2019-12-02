@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import { adminRouter } from "./routes";
 
@@ -16,6 +16,7 @@ class App extends Component {
 				<Switch>
 					{
 						adminRouter.map(route => {
+							console.log(adminRouter[0])
 							return (
 								<Route
 									key={ route.path }
@@ -29,7 +30,9 @@ class App extends Component {
 								/>
 							)
 						})
-					}
+					}`
+					<Redirect to={ adminRouter[0].path } from="/admin" exact  />
+					<Redirect to="/404" />
 				</Switch>
 			</div>
 		)

@@ -17,5 +17,5 @@ export const adminRouter = [
 	{ path: '/admin/settings', component: Settings },
 	{ path: '/admin/article', component: Article, exact: true },
 	{ path: '/admin/article/edit/:id', component: ArticleEdit },
-	{ path: '/404', component: NotFound },
+	// { path: '/404', component: NotFound },
 ]
