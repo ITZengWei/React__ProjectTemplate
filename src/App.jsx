@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
-import { adminRouter } from "./routes";
+import { adminRoutes } from "./routes";
 
 import './App.less'
 
 
 class App extends Component {
 	render() {
-		console.log(adminRouter)
-
 		return (
 			<div>
 				<div>公共的部分</div>
 				<Switch>
 					{
-						adminRouter.map(route => {
-							console.log(adminRouter[0])
+						adminRoutes.map(route => {
 							return (
 								<Route
 									key={ route.path }
@@ -31,7 +28,7 @@ class App extends Component {
 							)
 						})
 					}`
-					<Redirect to={ adminRouter[0].path } from="/admin" exact  />
+					<Redirect to={ adminRoutes[0].path } from="/admin" exact  />
 					<Redirect to="/404" />
 				</Switch>
 			</div>

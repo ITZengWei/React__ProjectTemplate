@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Switch, Redirect }  from 'react-router-dom
 import App from './App'
 import 'antd/dist/antd.css';
 
-import { mainRouter } from "./routes";
+import { mainRoutes } from "./routes";
 
 render(
 	<Router>
@@ -15,7 +15,7 @@ render(
 				return <App {...routerProps} />
 			}} />
 			{
-				mainRouter.map(routerProps => {
+				mainRoutes.map(routerProps => {
 					return <Route key={ routerProps.path } path={ routerProps.path } component={ routerProps.component } />
 				})
 			}
